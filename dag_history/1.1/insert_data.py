@@ -141,16 +141,6 @@ schedule="0 0 * * *"
         task_id="sql_md_ledger_account_s",
         conn_id="postgres-db",
         sql="sql/md_ledger_account_s.sql"
-    )  
-
-    split_data_marts = DummyOperator(
-        task_id="split_data_marts"
-    )
-
-    call_dm_fill_data_marts_f = SQLExecuteQueryOperator(
-        task_id="call_dm_fill_data_marts_f",
-        conn_id="postgres-db",
-        sql=r"CALL dm.dm_fill_data_marts_f('{{run_id}}')"
     )
 
     split_end = DummyOperator(
@@ -178,8 +168,6 @@ schedule="0 0 * * *"
         >> [ft_balance_f,ft_posting_f,md_account_d,md_currency_d,md_exchange_rate_d,md_ledger_account_s]
 	>> split1
         >> [sql_ft_posting_f,sql_ft_balance_f,sql_md_account_d,sql_md_currency_d,sql_md_exchange_rate_d,sql_md_ledger_account_s]
-        >> split_data_marts
-	>> call_dm_fill_data_marts_f
 	>> split_end
 	>> sql_end_to_log
         >> end

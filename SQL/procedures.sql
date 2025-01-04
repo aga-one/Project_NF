@@ -30,4 +30,5 @@ TABLE ds.md_currency_d;
 TABLE ds.md_exchange_rate_d;
 TABLE ds.md_ledger_account_s;
 
-
+TABLE logs.log_details;
+TRUNCATE logs.log_details; 

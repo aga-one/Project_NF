@@ -1,0 +1,34 @@
+[2025-01-04T08:49:12.132+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: insert_data.call_dm_fill_data_marts_f manual__2025-01-04T08:48:49.094115+00:00 [queued]>
+[2025-01-04T08:49:12.147+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: insert_data.call_dm_fill_data_marts_f manual__2025-01-04T08:48:49.094115+00:00 [queued]>
+[2025-01-04T08:49:12.148+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2025-01-04T08:49:12.499+0000] {taskinstance.py:2191} INFO - Executing <Task(SQLExecuteQueryOperator): call_dm_fill_data_marts_f> on 2025-01-04 08:48:49.094115+00:00
+[2025-01-04T08:49:12.514+0000] {standard_task_runner.py:60} INFO - Started process 730 to run task
+[2025-01-04T08:49:12.518+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'insert_data', 'call_dm_fill_data_marts_f', 'manual__2025-01-04T08:48:49.094115+00:00', '--job-id', '336', '--raw', '--subdir', 'DAGS_FOLDER/insert_data.py', '--cfg-path', '/tmp/tmpycbww_j9']
+[2025-01-04T08:49:12.521+0000] {standard_task_runner.py:88} INFO - Job 336: Subtask call_dm_fill_data_marts_f
+[2025-01-04T08:49:12.573+0000] {task_command.py:423} INFO - Running <TaskInstance: insert_data.call_dm_fill_data_marts_f manual__2025-01-04T08:48:49.094115+00:00 [running]> on host 403e7aadd7ee
+[2025-01-04T08:49:12.668+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='agushchin' AIRFLOW_CTX_DAG_ID='insert_data' AIRFLOW_CTX_TASK_ID='call_dm_fill_data_marts_f' AIRFLOW_CTX_EXECUTION_DATE='2025-01-04T08:48:49.094115+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-01-04T08:48:49.094115+00:00'
+[2025-01-04T08:49:12.669+0000] {sql.py:276} INFO - Executing: CALL dm.dm_fill_data_marts_f(manual__2025-01-04T08:48:49.094115+00:00)
+[2025-01-04T08:49:12.679+0000] {base.py:83} INFO - Using connection ID 'postgres-db' for task execution.
+[2025-01-04T08:49:12.687+0000] {base.py:83} INFO - Using connection ID 'postgres-db' for task execution.
+[2025-01-04T08:49:12.699+0000] {sql.py:450} INFO - Running statement: CALL dm.dm_fill_data_marts_f(manual__2025-01-04T08:48:49.094115+00:00), parameters: None
+[2025-01-04T08:49:12.703+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/operators/sql.py", line 282, in execute
+    output = hook.run(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 398, in run
+    self._run_command(cur, sql_statement, parameters)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 455, in _run_command
+    cur.execute(sql_statement)
+psycopg2.errors.SyntaxError: syntax error at or near "T08"
+LINE 1: CALL dm.dm_fill_data_marts_f(manual__2025-01-04T08:48:49.094...
+                                                       ^
+
+[2025-01-04T08:49:12.736+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=insert_data, task_id=call_dm_fill_data_marts_f, execution_date=20250104T084849, start_date=20250104T084912, end_date=20250104T084912
+[2025-01-04T08:49:12.751+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 336 for task call_dm_fill_data_marts_f (syntax error at or near "T08"
+LINE 1: CALL dm.dm_fill_data_marts_f(manual__2025-01-04T08:48:49.094...
+                                                       ^
+; 730)
+[2025-01-04T08:49:12.775+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-01-04T08:49:12.801+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,97 @@
+[2025-01-04T08:49:09.572+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: insert_data.sql_md_account_d manual__2025-01-04T08:48:49.094115+00:00 [queued]>
+[2025-01-04T08:49:09.588+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: insert_data.sql_md_account_d manual__2025-01-04T08:48:49.094115+00:00 [queued]>
+[2025-01-04T08:49:09.589+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2025-01-04T08:49:09.886+0000] {taskinstance.py:2191} INFO - Executing <Task(SQLExecuteQueryOperator): sql_md_account_d> on 2025-01-04 08:48:49.094115+00:00
+[2025-01-04T08:49:09.893+0000] {standard_task_runner.py:60} INFO - Started process 724 to run task
+[2025-01-04T08:49:09.903+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'insert_data', 'sql_md_account_d', 'manual__2025-01-04T08:48:49.094115+00:00', '--job-id', '335', '--raw', '--subdir', 'DAGS_FOLDER/insert_data.py', '--cfg-path', '/tmp/tmpdvvx3jfz']
+[2025-01-04T08:49:09.906+0000] {standard_task_runner.py:88} INFO - Job 335: Subtask sql_md_account_d
+[2025-01-04T08:49:09.965+0000] {task_command.py:423} INFO - Running <TaskInstance: insert_data.sql_md_account_d manual__2025-01-04T08:48:49.094115+00:00 [running]> on host 403e7aadd7ee
+[2025-01-04T08:49:10.068+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='agushchin' AIRFLOW_CTX_DAG_ID='insert_data' AIRFLOW_CTX_TASK_ID='sql_md_account_d' AIRFLOW_CTX_EXECUTION_DATE='2025-01-04T08:48:49.094115+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-01-04T08:48:49.094115+00:00'
+[2025-01-04T08:49:10.070+0000] {sql.py:276} INFO - Executing: UPDATE
+    ds.md_account_d md
+SET
+     account_number = mad."ACCOUNT_NUMBER"
+    , data_actual_end_date = to_date(mad."DATA_ACTUAL_END_DATE"
+    , 'YYYY-mm-dd')
+    , currency_rk = mad."CURRENCY_RK"
+    , char_type = mad."CHAR_TYPE"
+    , currency_code = mad."CURRENCY_CODE"
+FROM
+    stage.md_account_d mad
+WHERE
+    md.account_rk = mad."ACCOUNT_RK"
+    AND md.data_actual_date = to_date(mad."DATA_ACTUAL_DATE"
+    , 'YYYY-mm-dd');
+
+INSERT
+    INTO
+    ds.md_account_d
+    (account_rk
+    , account_number
+    , data_actual_date
+    , data_actual_end_date
+    , currency_rk
+    , char_type
+    , currency_code)
+SELECT DISTINCT
+    mad."ACCOUNT_RK"
+    , mad."ACCOUNT_NUMBER"
+    , to_date(mad."DATA_ACTUAL_DATE", 'YYYY-mm-dd')
+    , to_date(mad."DATA_ACTUAL_END_DATE", 'YYYY-mm-dd')
+    , mad."CURRENCY_RK"
+    , mad."CHAR_TYPE"
+    , mad."CURRENCY_CODE"
+FROM
+    stage.md_account_d mad
+LEFT JOIN ds.md_account_d md ON md.account_rk = mad."ACCOUNT_RK"
+AND md.data_actual_date = to_date(mad."DATA_ACTUAL_DATE", 'YYYY-mm-dd')
+WHERE md.account_rk IS NULL;
+
+--TABLE ds.md_account_d;
+[2025-01-04T08:49:10.080+0000] {base.py:83} INFO - Using connection ID 'postgres-db' for task execution.
+[2025-01-04T08:49:10.089+0000] {base.py:83} INFO - Using connection ID 'postgres-db' for task execution.
+[2025-01-04T08:49:10.103+0000] {sql.py:450} INFO - Running statement: UPDATE
+    ds.md_account_d md
+SET
+     account_number = mad."ACCOUNT_NUMBER"
+    , data_actual_end_date = to_date(mad."DATA_ACTUAL_END_DATE"
+    , 'YYYY-mm-dd')
+    , currency_rk = mad."CURRENCY_RK"
+    , char_type = mad."CHAR_TYPE"
+    , currency_code = mad."CURRENCY_CODE"
+FROM
+    stage.md_account_d mad
+WHERE
+    md.account_rk = mad."ACCOUNT_RK"
+    AND md.data_actual_date = to_date(mad."DATA_ACTUAL_DATE"
+    , 'YYYY-mm-dd');
+
+INSERT
+    INTO
+    ds.md_account_d
+    (account_rk
+    , account_number
+    , data_actual_date
+    , data_actual_end_date
+    , currency_rk
+    , char_type
+    , currency_code)
+SELECT DISTINCT
+    mad."ACCOUNT_RK"
+    , mad."ACCOUNT_NUMBER"
+    , to_date(mad."DATA_ACTUAL_DATE", 'YYYY-mm-dd')
+    , to_date(mad."DATA_ACTUAL_END_DATE", 'YYYY-mm-dd')
+    , mad."CURRENCY_RK"
+    , mad."CHAR_TYPE"
+    , mad."CURRENCY_CODE"
+FROM
+    stage.md_account_d mad
+LEFT JOIN ds.md_account_d md ON md.account_rk = mad."ACCOUNT_RK"
+AND md.data_actual_date = to_date(mad."DATA_ACTUAL_DATE", 'YYYY-mm-dd')
+WHERE md.account_rk IS NULL;
+
+--TABLE ds.md_account_d;, parameters: None
+[2025-01-04T08:49:10.109+0000] {sql.py:459} INFO - Rows affected: 0
+[2025-01-04T08:49:10.124+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=insert_data, task_id=sql_md_account_d, execution_date=20250104T084849, start_date=20250104T084909, end_date=20250104T084910
+[2025-01-04T08:49:10.152+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-01-04T08:49:10.249+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

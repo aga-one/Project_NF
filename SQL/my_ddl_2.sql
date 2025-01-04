@@ -11,8 +11,6 @@ on_date date NOT NULL
 ,debet_amount_rub NUMERIC(23, 8) NULL
 );
 
-DROP FUNCTION dm.dm_fill_account_turnover_f(i_OnDate date);
-
 CREATE OR REPLACE PROCEDURE dm.dm_fill_account_turnover_f(i_OnDate date)
 --RETURNS TABLE(on_date date, account_rk int8, credit_amount NUMERIC(23, 8),credit_amount_rub NUMERIC(23, 8),debet_amount NUMERIC(23, 8),debet_amount_rub NUMERIC(23, 8))
  AS $$
@@ -41,9 +39,6 @@ INSERT INTO dm.dm_account_turnover_f (on_date, account_rk, credit_amount, credit
     GROUP BY p.account_rk;
 $$  LANGUAGE SQL;
 
-SELECT * FROM ds.ft_balance_f;
-
-
 CALL dm.dm_fill_account_turnover_f('2018-01-15'::date);
 TABLE dm.dm_account_turnover_f;
 
@@ -67,15 +62,6 @@ CREATE TABLE dm.dm_account_balance_f (
     balance_out_rub NUMERIC(23, 8) NULL
 );
 
---create table dm.dm_account_balance_f as
-INSERT INTO dm.dm_account_balance_f
-SELECT fbf.on_date, fbf.account_rk, fbf.balance_out, fbf.balance_out*COALESCE(merd.reduced_cource,1) AS balance_out_rub
-FROM ds.ft_balance_f fbf 
-    JOIN ds.md_account_d mad ON fbf.account_rk = mad.account_rk 
-    LEFT JOIN ds.md_exchange_rate_d merd ON mad.currency_rk = merd.currency_rk AND '2017-12-31'::date BETWEEN merd.data_actual_date AND merd.data_actual_end_date
-WHERE fbf.on_date = '2017-12-31'::date;
-
-
 
 
 CREATE OR REPLACE PROCEDURE dm.dm_fill_account_balance_f(i_OnDate date)
@@ -97,6 +83,7 @@ DECLARE
 BEGIN
 TRUNCATE dm.dm_account_balance_f;
 
+--create table dm.dm_account_balance_f as
 INSERT INTO dm.dm_account_balance_f
 SELECT fbf.on_date, fbf.account_rk, fbf.balance_out, fbf.balance_out*COALESCE(merd.reduced_cource,1) AS balance_out_rub
 FROM ds.ft_balance_f fbf 
@@ -114,19 +101,37 @@ CALL dm.dm_fill_account_balance_f('2018-01-03'::date);
 
 SELECT * FROM ds.ft_balance_f;
 
+CREATE OR REPLACE PROCEDURE dm.dm_fill_data_marts_f(run_id bpchar(64))
+LANGUAGE plpgsql AS
+$$
+DECLARE
+    dt record;
+BEGIN
+INSERT INTO logs.log_details ("time", run_id, job) 
+            VALUES (CURRENT_TIMESTAMP, run_id,'Data mart. Start filling');
+TRUNCATE dm.dm_account_turnover_f;
+TRUNCATE dm.dm_account_balance_f;
+
+INSERT INTO dm.dm_account_balance_f
+SELECT fbf.on_date, fbf.account_rk, fbf.balance_out, fbf.balance_out*COALESCE(merd.reduced_cource,1) AS balance_out_rub
+FROM ds.ft_balance_f fbf 
+    JOIN ds.md_account_d mad ON fbf.account_rk = mad.account_rk 
+    LEFT JOIN ds.md_exchange_rate_d merd ON mad.currency_rk = merd.currency_rk AND '2017-12-31'::date BETWEEN merd.data_actual_date AND merd.data_actual_end_date
+WHERE fbf.on_date = '2017-12-31'::date;
+
+FOR dt IN SELECT generate_series('2018-01-01'::date, '2018-01-31'::date, '1 day'::interval) LOOP
+    RAISE NOTICE 'Processing date: %', dt.generate_series::date;
+    INSERT INTO logs.log_details ("time", run_id, job) 
+            VALUES (CURRENT_TIMESTAMP, run_id,'Data mart. Processing date: ' || dt.generate_series::date);
+    CALL dm.dm_fill_account_turnover_f(dt.generate_series::date);
+    CALL dm.dm_fill_account_balance_f(dt.generate_series::date);
+END LOOP;
+END;
+$$;
 
 
+CALL dm.dm_fill_data_marts_f('manual__2024-12-31T17:10:26.179982+00:00');
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+TABLE dm.dm_account_turnover_f;
+TABLE dm.dm_account_balance_f;
