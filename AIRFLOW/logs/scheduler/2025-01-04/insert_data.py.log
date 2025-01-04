@@ -4576,3 +4576,1081 @@ jinja2.exceptions.TemplateNotFound: sql/md_ledger_account_s.sql
 [2025-01-04T08:59:46.588+0000] {logging_mixin.py:188} INFO - [2025-01-04T08:59:46.588+0000] {dag.py:3036} INFO - Sync 1 DAGs
 [2025-01-04T08:59:46.617+0000] {logging_mixin.py:188} INFO - [2025-01-04T08:59:46.616+0000] {dag.py:3823} INFO - Setting next_dagrun for insert_data to 2025-01-04 00:00:00+00:00, run_after=2025-01-05 00:00:00+00:00
 [2025-01-04T08:59:46.650+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/insert_data.py took 0.791 seconds
+[2025-01-04T09:00:16.962+0000] {processor.py:161} INFO - Started process (PID=871) to work on /opt/airflow/dags/insert_data.py
+[2025-01-04T09:00:16.964+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/insert_data.py for tasks to queue
+[2025-01-04T09:00:16.965+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:00:16.965+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/insert_data.py
+[2025-01-04T09:00:17.619+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:00:17.617+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/ft_posting_f.sql
+[2025-01-04T09:00:17.620+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:00:17.620+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/ft_balance_f.sql
+[2025-01-04T09:00:17.621+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:00:17.621+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_account_d.sql
+[2025-01-04T09:00:17.622+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:00:17.622+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_currency_d.sql
+[2025-01-04T09:00:17.623+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:00:17.623+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_exchange_rate_d.sql
+[2025-01-04T09:00:17.624+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:00:17.624+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_ledger_account_s.sql
+[2025-01-04T09:00:17.629+0000] {processor.py:840} INFO - DAG(s) 'insert_data' retrieved from /opt/airflow/dags/insert_data.py
+[2025-01-04T09:00:17.652+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:00:17.652+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-01-04T09:00:17.684+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:00:17.683+0000] {dag.py:3823} INFO - Setting next_dagrun for insert_data to 2025-01-04 00:00:00+00:00, run_after=2025-01-05 00:00:00+00:00
+[2025-01-04T09:00:17.732+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/insert_data.py took 0.774 seconds
+[2025-01-04T09:00:48.034+0000] {processor.py:161} INFO - Started process (PID=879) to work on /opt/airflow/dags/insert_data.py
+[2025-01-04T09:00:48.036+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/insert_data.py for tasks to queue
+[2025-01-04T09:00:48.038+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:00:48.037+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/insert_data.py
+[2025-01-04T09:00:48.645+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:00:48.643+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/ft_posting_f.sql
+[2025-01-04T09:00:48.646+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:00:48.646+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/ft_balance_f.sql
+[2025-01-04T09:00:48.647+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:00:48.647+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_account_d.sql
+[2025-01-04T09:00:48.648+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:00:48.648+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_currency_d.sql
+[2025-01-04T09:00:48.649+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:00:48.649+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_exchange_rate_d.sql
+[2025-01-04T09:00:48.651+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:00:48.650+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_ledger_account_s.sql
+[2025-01-04T09:00:48.654+0000] {processor.py:840} INFO - DAG(s) 'insert_data' retrieved from /opt/airflow/dags/insert_data.py
+[2025-01-04T09:00:48.678+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:00:48.678+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-01-04T09:00:48.703+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:00:48.702+0000] {dag.py:3823} INFO - Setting next_dagrun for insert_data to 2025-01-04 00:00:00+00:00, run_after=2025-01-05 00:00:00+00:00
+[2025-01-04T09:00:48.750+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/insert_data.py took 0.719 seconds
+[2025-01-04T09:01:19.046+0000] {processor.py:161} INFO - Started process (PID=887) to work on /opt/airflow/dags/insert_data.py
+[2025-01-04T09:01:19.048+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/insert_data.py for tasks to queue
+[2025-01-04T09:01:19.050+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:01:19.050+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/insert_data.py
+[2025-01-04T09:01:19.671+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:01:19.670+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/ft_posting_f.sql
+[2025-01-04T09:01:19.673+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:01:19.673+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/ft_balance_f.sql
+[2025-01-04T09:01:19.674+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:01:19.674+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_account_d.sql
+[2025-01-04T09:01:19.675+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:01:19.675+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_currency_d.sql
+[2025-01-04T09:01:19.676+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:01:19.676+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_exchange_rate_d.sql
+[2025-01-04T09:01:19.677+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:01:19.677+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_ledger_account_s.sql
+[2025-01-04T09:01:19.681+0000] {processor.py:840} INFO - DAG(s) 'insert_data' retrieved from /opt/airflow/dags/insert_data.py
+[2025-01-04T09:01:19.707+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:01:19.706+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-01-04T09:01:19.730+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:01:19.730+0000] {dag.py:3823} INFO - Setting next_dagrun for insert_data to 2025-01-04 00:00:00+00:00, run_after=2025-01-05 00:00:00+00:00
+[2025-01-04T09:01:19.777+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/insert_data.py took 0.734 seconds
+[2025-01-04T09:01:49.962+0000] {processor.py:161} INFO - Started process (PID=895) to work on /opt/airflow/dags/insert_data.py
+[2025-01-04T09:01:49.964+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/insert_data.py for tasks to queue
+[2025-01-04T09:01:49.965+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:01:49.965+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/insert_data.py
+[2025-01-04T09:01:50.566+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:01:50.565+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/ft_posting_f.sql
+[2025-01-04T09:01:50.568+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:01:50.567+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/ft_balance_f.sql
+[2025-01-04T09:01:50.569+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:01:50.568+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_account_d.sql
+[2025-01-04T09:01:50.570+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:01:50.569+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_currency_d.sql
+[2025-01-04T09:01:50.571+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:01:50.570+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_exchange_rate_d.sql
+[2025-01-04T09:01:50.572+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:01:50.572+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_ledger_account_s.sql
+[2025-01-04T09:01:50.576+0000] {processor.py:840} INFO - DAG(s) 'insert_data' retrieved from /opt/airflow/dags/insert_data.py
+[2025-01-04T09:01:50.600+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:01:50.599+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-01-04T09:01:50.623+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:01:50.622+0000] {dag.py:3823} INFO - Setting next_dagrun for insert_data to 2025-01-04 00:00:00+00:00, run_after=2025-01-05 00:00:00+00:00
+[2025-01-04T09:01:50.668+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/insert_data.py took 0.710 seconds
+[2025-01-04T09:02:20.980+0000] {processor.py:161} INFO - Started process (PID=903) to work on /opt/airflow/dags/insert_data.py
+[2025-01-04T09:02:20.982+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/insert_data.py for tasks to queue
+[2025-01-04T09:02:20.983+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:02:20.983+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/insert_data.py
+[2025-01-04T09:02:21.626+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:02:21.625+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/ft_posting_f.sql
+[2025-01-04T09:02:21.628+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:02:21.627+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/ft_balance_f.sql
+[2025-01-04T09:02:21.629+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:02:21.629+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_account_d.sql
+[2025-01-04T09:02:21.630+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:02:21.630+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_currency_d.sql
+[2025-01-04T09:02:21.631+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:02:21.631+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_exchange_rate_d.sql
+[2025-01-04T09:02:21.633+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:02:21.632+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_ledger_account_s.sql
+[2025-01-04T09:02:21.637+0000] {processor.py:840} INFO - DAG(s) 'insert_data' retrieved from /opt/airflow/dags/insert_data.py
+[2025-01-04T09:02:21.661+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:02:21.660+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-01-04T09:02:21.686+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:02:21.685+0000] {dag.py:3823} INFO - Setting next_dagrun for insert_data to 2025-01-04 00:00:00+00:00, run_after=2025-01-05 00:00:00+00:00
+[2025-01-04T09:02:21.734+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/insert_data.py took 0.759 seconds
+[2025-01-04T09:02:52.026+0000] {processor.py:161} INFO - Started process (PID=911) to work on /opt/airflow/dags/insert_data.py
+[2025-01-04T09:02:52.028+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/insert_data.py for tasks to queue
+[2025-01-04T09:02:52.030+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:02:52.029+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/insert_data.py
+[2025-01-04T09:02:52.638+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:02:52.636+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/ft_posting_f.sql
+[2025-01-04T09:02:52.640+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:02:52.640+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/ft_balance_f.sql
+[2025-01-04T09:02:52.641+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:02:52.641+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_account_d.sql
+[2025-01-04T09:02:52.642+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:02:52.642+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_currency_d.sql
+[2025-01-04T09:02:52.644+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:02:52.643+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_exchange_rate_d.sql
+[2025-01-04T09:02:52.645+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:02:52.644+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_ledger_account_s.sql
+[2025-01-04T09:02:52.648+0000] {processor.py:840} INFO - DAG(s) 'insert_data' retrieved from /opt/airflow/dags/insert_data.py
+[2025-01-04T09:02:52.673+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:02:52.673+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-01-04T09:02:52.697+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:02:52.697+0000] {dag.py:3823} INFO - Setting next_dagrun for insert_data to 2025-01-04 00:00:00+00:00, run_after=2025-01-05 00:00:00+00:00
+[2025-01-04T09:02:52.749+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/insert_data.py took 0.726 seconds
+[2025-01-04T09:03:23.043+0000] {processor.py:161} INFO - Started process (PID=919) to work on /opt/airflow/dags/insert_data.py
+[2025-01-04T09:03:23.045+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/insert_data.py for tasks to queue
+[2025-01-04T09:03:23.047+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:03:23.046+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/insert_data.py
+[2025-01-04T09:03:23.646+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:03:23.644+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/ft_posting_f.sql
+[2025-01-04T09:03:23.647+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:03:23.647+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/ft_balance_f.sql
+[2025-01-04T09:03:23.648+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:03:23.648+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_account_d.sql
+[2025-01-04T09:03:23.649+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:03:23.649+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_currency_d.sql
+[2025-01-04T09:03:23.650+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:03:23.650+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_exchange_rate_d.sql
+[2025-01-04T09:03:23.651+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:03:23.651+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_ledger_account_s.sql
+[2025-01-04T09:03:23.655+0000] {processor.py:840} INFO - DAG(s) 'insert_data' retrieved from /opt/airflow/dags/insert_data.py
+[2025-01-04T09:03:23.680+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:03:23.680+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-01-04T09:03:23.704+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:03:23.703+0000] {dag.py:3823} INFO - Setting next_dagrun for insert_data to 2025-01-04 00:00:00+00:00, run_after=2025-01-05 00:00:00+00:00
+[2025-01-04T09:03:23.752+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/insert_data.py took 0.712 seconds
+[2025-01-04T09:03:54.052+0000] {processor.py:161} INFO - Started process (PID=927) to work on /opt/airflow/dags/insert_data.py
+[2025-01-04T09:03:54.053+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/insert_data.py for tasks to queue
+[2025-01-04T09:03:54.054+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:03:54.054+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/insert_data.py
+[2025-01-04T09:03:54.630+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:03:54.628+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/ft_posting_f.sql
+[2025-01-04T09:03:54.631+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:03:54.631+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/ft_balance_f.sql
+[2025-01-04T09:03:54.632+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:03:54.632+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_account_d.sql
+[2025-01-04T09:03:54.633+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:03:54.633+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_currency_d.sql
+[2025-01-04T09:03:54.634+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:03:54.634+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_exchange_rate_d.sql
+[2025-01-04T09:03:54.635+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:03:54.635+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_ledger_account_s.sql
+[2025-01-04T09:03:54.640+0000] {processor.py:840} INFO - DAG(s) 'insert_data' retrieved from /opt/airflow/dags/insert_data.py
+[2025-01-04T09:03:54.671+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:03:54.670+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-01-04T09:03:54.696+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:03:54.696+0000] {dag.py:3823} INFO - Setting next_dagrun for insert_data to 2025-01-04 00:00:00+00:00, run_after=2025-01-05 00:00:00+00:00
+[2025-01-04T09:03:54.717+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/insert_data.py took 0.669 seconds
+[2025-01-04T09:28:50.571+0000] {processor.py:161} INFO - Started process (PID=929) to work on /opt/airflow/dags/insert_data.py
+[2025-01-04T09:28:50.572+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/insert_data.py for tasks to queue
+[2025-01-04T09:28:50.573+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:28:50.573+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/insert_data.py
+[2025-01-04T09:28:51.248+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:28:51.246+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/ft_posting_f.sql
+[2025-01-04T09:28:51.249+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:28:51.249+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/ft_balance_f.sql
+[2025-01-04T09:28:51.250+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:28:51.249+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_account_d.sql
+[2025-01-04T09:28:51.250+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:28:51.250+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_currency_d.sql
+[2025-01-04T09:28:51.251+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:28:51.251+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_exchange_rate_d.sql
+[2025-01-04T09:28:51.252+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:28:51.252+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_ledger_account_s.sql
+[2025-01-04T09:28:51.255+0000] {processor.py:840} INFO - DAG(s) 'insert_data' retrieved from /opt/airflow/dags/insert_data.py
+[2025-01-04T09:28:51.285+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:28:51.285+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-01-04T09:28:51.317+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:28:51.316+0000] {dag.py:3823} INFO - Setting next_dagrun for insert_data to 2025-01-04 00:00:00+00:00, run_after=2025-01-05 00:00:00+00:00
+[2025-01-04T09:28:51.366+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/insert_data.py took 0.805 seconds
+[2025-01-04T09:29:21.654+0000] {processor.py:161} INFO - Started process (PID=937) to work on /opt/airflow/dags/insert_data.py
+[2025-01-04T09:29:21.656+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/insert_data.py for tasks to queue
+[2025-01-04T09:29:21.657+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:29:21.657+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/insert_data.py
+[2025-01-04T09:29:22.459+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:29:22.457+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/ft_posting_f.sql
+[2025-01-04T09:29:22.460+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:29:22.460+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/ft_balance_f.sql
+[2025-01-04T09:29:22.461+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:29:22.461+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_account_d.sql
+[2025-01-04T09:29:22.462+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:29:22.462+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_currency_d.sql
+[2025-01-04T09:29:22.463+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:29:22.463+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_exchange_rate_d.sql
+[2025-01-04T09:29:22.464+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:29:22.464+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_ledger_account_s.sql
+[2025-01-04T09:29:22.469+0000] {processor.py:840} INFO - DAG(s) 'insert_data' retrieved from /opt/airflow/dags/insert_data.py
+[2025-01-04T09:29:22.501+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:29:22.500+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-01-04T09:29:22.527+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:29:22.527+0000] {dag.py:3823} INFO - Setting next_dagrun for insert_data to 2025-01-04 00:00:00+00:00, run_after=2025-01-05 00:00:00+00:00
+[2025-01-04T09:29:22.577+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/insert_data.py took 0.929 seconds
+[2025-01-04T09:29:52.893+0000] {processor.py:161} INFO - Started process (PID=945) to work on /opt/airflow/dags/insert_data.py
+[2025-01-04T09:29:52.895+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/insert_data.py for tasks to queue
+[2025-01-04T09:29:52.896+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:29:52.896+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/insert_data.py
+[2025-01-04T09:29:53.469+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:29:53.468+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/ft_posting_f.sql
+[2025-01-04T09:29:53.470+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:29:53.470+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/ft_balance_f.sql
+[2025-01-04T09:29:53.472+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:29:53.471+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_account_d.sql
+[2025-01-04T09:29:53.473+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:29:53.472+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_currency_d.sql
+[2025-01-04T09:29:53.474+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:29:53.473+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_exchange_rate_d.sql
+[2025-01-04T09:29:53.475+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:29:53.474+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_ledger_account_s.sql
+[2025-01-04T09:29:53.478+0000] {processor.py:840} INFO - DAG(s) 'insert_data' retrieved from /opt/airflow/dags/insert_data.py
+[2025-01-04T09:29:53.501+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:29:53.500+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-01-04T09:29:53.541+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:29:53.540+0000] {dag.py:3823} INFO - Setting next_dagrun for insert_data to 2025-01-04 00:00:00+00:00, run_after=2025-01-05 00:00:00+00:00
+[2025-01-04T09:29:53.570+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/insert_data.py took 0.681 seconds
+[2025-01-04T09:30:23.856+0000] {processor.py:161} INFO - Started process (PID=953) to work on /opt/airflow/dags/insert_data.py
+[2025-01-04T09:30:23.858+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/insert_data.py for tasks to queue
+[2025-01-04T09:30:23.860+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:30:23.859+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/insert_data.py
+[2025-01-04T09:30:24.526+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:30:24.524+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/ft_posting_f.sql
+[2025-01-04T09:30:24.527+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:30:24.527+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/ft_balance_f.sql
+[2025-01-04T09:30:24.528+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:30:24.528+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_account_d.sql
+[2025-01-04T09:30:24.530+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:30:24.529+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_currency_d.sql
+[2025-01-04T09:30:24.530+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:30:24.530+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_exchange_rate_d.sql
+[2025-01-04T09:30:24.532+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:30:24.531+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_ledger_account_s.sql
+[2025-01-04T09:30:24.535+0000] {processor.py:840} INFO - DAG(s) 'insert_data' retrieved from /opt/airflow/dags/insert_data.py
+[2025-01-04T09:30:24.559+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:30:24.558+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-01-04T09:30:24.581+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:30:24.580+0000] {dag.py:3823} INFO - Setting next_dagrun for insert_data to 2025-01-04 00:00:00+00:00, run_after=2025-01-05 00:00:00+00:00
+[2025-01-04T09:30:24.625+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/insert_data.py took 0.776 seconds
+[2025-01-04T09:30:54.782+0000] {processor.py:161} INFO - Started process (PID=961) to work on /opt/airflow/dags/insert_data.py
+[2025-01-04T09:30:54.783+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/insert_data.py for tasks to queue
+[2025-01-04T09:30:54.784+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:30:54.784+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/insert_data.py
+[2025-01-04T09:30:55.347+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:30:55.345+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/ft_posting_f.sql
+[2025-01-04T09:30:55.348+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:30:55.348+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/ft_balance_f.sql
+[2025-01-04T09:30:55.349+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:30:55.349+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_account_d.sql
+[2025-01-04T09:30:55.350+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:30:55.350+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_currency_d.sql
+[2025-01-04T09:30:55.351+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:30:55.351+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_exchange_rate_d.sql
+[2025-01-04T09:30:55.353+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:30:55.352+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_ledger_account_s.sql
+[2025-01-04T09:30:55.356+0000] {processor.py:840} INFO - DAG(s) 'insert_data' retrieved from /opt/airflow/dags/insert_data.py
+[2025-01-04T09:30:55.383+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:30:55.383+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-01-04T09:30:55.417+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:30:55.417+0000] {dag.py:3823} INFO - Setting next_dagrun for insert_data to 2025-01-04 00:00:00+00:00, run_after=2025-01-05 00:00:00+00:00
+[2025-01-04T09:30:55.469+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/insert_data.py took 0.690 seconds
+[2025-01-04T09:31:25.776+0000] {processor.py:161} INFO - Started process (PID=969) to work on /opt/airflow/dags/insert_data.py
+[2025-01-04T09:31:25.777+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/insert_data.py for tasks to queue
+[2025-01-04T09:31:25.779+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:31:25.779+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/insert_data.py
+[2025-01-04T09:31:26.439+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:31:26.438+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/ft_posting_f.sql
+[2025-01-04T09:31:26.440+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:31:26.440+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/ft_balance_f.sql
+[2025-01-04T09:31:26.442+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:31:26.441+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_account_d.sql
+[2025-01-04T09:31:26.443+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:31:26.442+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_currency_d.sql
+[2025-01-04T09:31:26.443+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:31:26.443+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_exchange_rate_d.sql
+[2025-01-04T09:31:26.444+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:31:26.444+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_ledger_account_s.sql
+[2025-01-04T09:31:26.448+0000] {processor.py:840} INFO - DAG(s) 'insert_data' retrieved from /opt/airflow/dags/insert_data.py
+[2025-01-04T09:31:26.482+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:31:26.481+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-01-04T09:31:26.508+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:31:26.507+0000] {dag.py:3823} INFO - Setting next_dagrun for insert_data to 2025-01-04 00:00:00+00:00, run_after=2025-01-05 00:00:00+00:00
+[2025-01-04T09:31:26.558+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/insert_data.py took 0.786 seconds
+[2025-01-04T09:31:56.851+0000] {processor.py:161} INFO - Started process (PID=983) to work on /opt/airflow/dags/insert_data.py
+[2025-01-04T09:31:56.852+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/insert_data.py for tasks to queue
+[2025-01-04T09:31:56.853+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:31:56.853+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/insert_data.py
+[2025-01-04T09:31:57.451+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:31:57.449+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/ft_posting_f.sql
+[2025-01-04T09:31:57.452+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:31:57.452+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/ft_balance_f.sql
+[2025-01-04T09:31:57.453+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:31:57.453+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_account_d.sql
+[2025-01-04T09:31:57.454+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:31:57.454+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_currency_d.sql
+[2025-01-04T09:31:57.455+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:31:57.454+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_exchange_rate_d.sql
+[2025-01-04T09:31:57.455+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:31:57.455+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_ledger_account_s.sql
+[2025-01-04T09:31:57.460+0000] {processor.py:840} INFO - DAG(s) 'insert_data' retrieved from /opt/airflow/dags/insert_data.py
+[2025-01-04T09:31:57.485+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:31:57.484+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-01-04T09:31:57.505+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:31:57.505+0000] {dag.py:3823} INFO - Setting next_dagrun for insert_data to 2025-01-04 00:00:00+00:00, run_after=2025-01-05 00:00:00+00:00
+[2025-01-04T09:31:57.550+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/insert_data.py took 0.703 seconds
+[2025-01-04T09:32:27.637+0000] {processor.py:161} INFO - Started process (PID=992) to work on /opt/airflow/dags/insert_data.py
+[2025-01-04T09:32:27.638+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/insert_data.py for tasks to queue
+[2025-01-04T09:32:27.640+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:32:27.639+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/insert_data.py
+[2025-01-04T09:32:28.321+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:32:28.320+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/ft_posting_f.sql
+[2025-01-04T09:32:28.323+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:32:28.323+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/ft_balance_f.sql
+[2025-01-04T09:32:28.324+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:32:28.324+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_account_d.sql
+[2025-01-04T09:32:28.325+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:32:28.325+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_currency_d.sql
+[2025-01-04T09:32:28.326+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:32:28.326+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_exchange_rate_d.sql
+[2025-01-04T09:32:28.327+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:32:28.327+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_ledger_account_s.sql
+[2025-01-04T09:32:28.330+0000] {processor.py:840} INFO - DAG(s) 'insert_data' retrieved from /opt/airflow/dags/insert_data.py
+[2025-01-04T09:32:28.355+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:32:28.354+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-01-04T09:32:28.380+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:32:28.379+0000] {dag.py:3823} INFO - Setting next_dagrun for insert_data to 2025-01-04 00:00:00+00:00, run_after=2025-01-05 00:00:00+00:00
+[2025-01-04T09:32:28.411+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/insert_data.py took 0.778 seconds
+[2025-01-04T09:32:58.716+0000] {processor.py:161} INFO - Started process (PID=1000) to work on /opt/airflow/dags/insert_data.py
+[2025-01-04T09:32:58.717+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/insert_data.py for tasks to queue
+[2025-01-04T09:32:58.718+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:32:58.718+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/insert_data.py
+[2025-01-04T09:32:59.310+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:32:59.309+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/ft_posting_f.sql
+[2025-01-04T09:32:59.312+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:32:59.311+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/ft_balance_f.sql
+[2025-01-04T09:32:59.313+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:32:59.313+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_account_d.sql
+[2025-01-04T09:32:59.314+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:32:59.314+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_currency_d.sql
+[2025-01-04T09:32:59.315+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:32:59.314+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_exchange_rate_d.sql
+[2025-01-04T09:32:59.316+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:32:59.316+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_ledger_account_s.sql
+[2025-01-04T09:32:59.319+0000] {processor.py:840} INFO - DAG(s) 'insert_data' retrieved from /opt/airflow/dags/insert_data.py
+[2025-01-04T09:32:59.343+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:32:59.343+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-01-04T09:32:59.369+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:32:59.369+0000] {dag.py:3823} INFO - Setting next_dagrun for insert_data to 2025-01-04 00:00:00+00:00, run_after=2025-01-05 00:00:00+00:00
+[2025-01-04T09:32:59.418+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/insert_data.py took 0.706 seconds
+[2025-01-04T09:33:29.703+0000] {processor.py:161} INFO - Started process (PID=1008) to work on /opt/airflow/dags/insert_data.py
+[2025-01-04T09:33:29.704+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/insert_data.py for tasks to queue
+[2025-01-04T09:33:29.705+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:33:29.705+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/insert_data.py
+[2025-01-04T09:33:30.344+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:33:30.343+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/ft_posting_f.sql
+[2025-01-04T09:33:30.346+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:33:30.345+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/ft_balance_f.sql
+[2025-01-04T09:33:30.347+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:33:30.347+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_account_d.sql
+[2025-01-04T09:33:30.348+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:33:30.348+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_currency_d.sql
+[2025-01-04T09:33:30.349+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:33:30.349+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_exchange_rate_d.sql
+[2025-01-04T09:33:30.350+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:33:30.350+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_ledger_account_s.sql
+[2025-01-04T09:33:30.353+0000] {processor.py:840} INFO - DAG(s) 'insert_data' retrieved from /opt/airflow/dags/insert_data.py
+[2025-01-04T09:33:30.379+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:33:30.378+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-01-04T09:33:30.402+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:33:30.401+0000] {dag.py:3823} INFO - Setting next_dagrun for insert_data to 2025-01-04 00:00:00+00:00, run_after=2025-01-05 00:00:00+00:00
+[2025-01-04T09:33:30.448+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/insert_data.py took 0.748 seconds
+[2025-01-04T09:34:00.553+0000] {processor.py:161} INFO - Started process (PID=1016) to work on /opt/airflow/dags/insert_data.py
+[2025-01-04T09:34:00.554+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/insert_data.py for tasks to queue
+[2025-01-04T09:34:00.556+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:34:00.555+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/insert_data.py
+[2025-01-04T09:34:01.194+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:34:01.192+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/ft_posting_f.sql
+[2025-01-04T09:34:01.196+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:34:01.195+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/ft_balance_f.sql
+[2025-01-04T09:34:01.197+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:34:01.197+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_account_d.sql
+[2025-01-04T09:34:01.198+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:34:01.198+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_currency_d.sql
+[2025-01-04T09:34:01.199+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:34:01.199+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_exchange_rate_d.sql
+[2025-01-04T09:34:01.200+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:34:01.200+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_ledger_account_s.sql
+[2025-01-04T09:34:01.204+0000] {processor.py:840} INFO - DAG(s) 'insert_data' retrieved from /opt/airflow/dags/insert_data.py
+[2025-01-04T09:34:01.229+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:34:01.229+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-01-04T09:34:01.254+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:34:01.253+0000] {dag.py:3823} INFO - Setting next_dagrun for insert_data to 2025-01-04 00:00:00+00:00, run_after=2025-01-05 00:00:00+00:00
+[2025-01-04T09:34:01.279+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/insert_data.py took 0.729 seconds
+[2025-01-04T09:34:31.567+0000] {processor.py:161} INFO - Started process (PID=1024) to work on /opt/airflow/dags/insert_data.py
+[2025-01-04T09:34:31.569+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/insert_data.py for tasks to queue
+[2025-01-04T09:34:31.570+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:34:31.570+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/insert_data.py
+[2025-01-04T09:34:32.131+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:34:32.129+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/ft_posting_f.sql
+[2025-01-04T09:34:32.132+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:34:32.132+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/ft_balance_f.sql
+[2025-01-04T09:34:32.134+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:34:32.134+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_account_d.sql
+[2025-01-04T09:34:32.135+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:34:32.135+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_currency_d.sql
+[2025-01-04T09:34:32.136+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:34:32.136+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_exchange_rate_d.sql
+[2025-01-04T09:34:32.137+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:34:32.137+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_ledger_account_s.sql
+[2025-01-04T09:34:32.140+0000] {processor.py:840} INFO - DAG(s) 'insert_data' retrieved from /opt/airflow/dags/insert_data.py
+[2025-01-04T09:34:32.164+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:34:32.163+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-01-04T09:34:32.187+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:34:32.187+0000] {dag.py:3823} INFO - Setting next_dagrun for insert_data to 2025-01-04 00:00:00+00:00, run_after=2025-01-05 00:00:00+00:00
+[2025-01-04T09:34:32.238+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/insert_data.py took 0.675 seconds
+[2025-01-04T09:35:02.523+0000] {processor.py:161} INFO - Started process (PID=1032) to work on /opt/airflow/dags/insert_data.py
+[2025-01-04T09:35:02.525+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/insert_data.py for tasks to queue
+[2025-01-04T09:35:02.527+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:35:02.526+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/insert_data.py
+[2025-01-04T09:35:03.086+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:35:03.084+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/ft_posting_f.sql
+[2025-01-04T09:35:03.087+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:35:03.087+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/ft_balance_f.sql
+[2025-01-04T09:35:03.089+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:35:03.089+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_account_d.sql
+[2025-01-04T09:35:03.090+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:35:03.090+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_currency_d.sql
+[2025-01-04T09:35:03.091+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:35:03.091+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_exchange_rate_d.sql
+[2025-01-04T09:35:03.092+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:35:03.092+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_ledger_account_s.sql
+[2025-01-04T09:35:03.097+0000] {processor.py:840} INFO - DAG(s) 'insert_data' retrieved from /opt/airflow/dags/insert_data.py
+[2025-01-04T09:35:03.128+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:35:03.127+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-01-04T09:35:03.156+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:35:03.156+0000] {dag.py:3823} INFO - Setting next_dagrun for insert_data to 2025-01-04 00:00:00+00:00, run_after=2025-01-05 00:00:00+00:00
+[2025-01-04T09:35:03.207+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/insert_data.py took 0.687 seconds
+[2025-01-04T09:35:33.497+0000] {processor.py:161} INFO - Started process (PID=1040) to work on /opt/airflow/dags/insert_data.py
+[2025-01-04T09:35:33.498+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/insert_data.py for tasks to queue
+[2025-01-04T09:35:33.500+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:35:33.500+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/insert_data.py
+[2025-01-04T09:35:34.164+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:35:34.163+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/ft_posting_f.sql
+[2025-01-04T09:35:34.166+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:35:34.165+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/ft_balance_f.sql
+[2025-01-04T09:35:34.167+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:35:34.167+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_account_d.sql
+[2025-01-04T09:35:34.168+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:35:34.168+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_currency_d.sql
+[2025-01-04T09:35:34.173+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:35:34.173+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_exchange_rate_d.sql
+[2025-01-04T09:35:34.174+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:35:34.174+0000] {templater.py:95} ERROR - Failed to resolve template field 'sql'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 93, in resolve_template_files
+    setattr(self, field, env.loader.get_source(env, content)[0])  # type: ignore
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/loaders.py", line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: sql/md_ledger_account_s.sql
+[2025-01-04T09:35:34.177+0000] {processor.py:840} INFO - DAG(s) 'insert_data' retrieved from /opt/airflow/dags/insert_data.py
+[2025-01-04T09:35:34.202+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:35:34.201+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-01-04T09:35:34.224+0000] {logging_mixin.py:188} INFO - [2025-01-04T09:35:34.224+0000] {dag.py:3823} INFO - Setting next_dagrun for insert_data to 2025-01-04 00:00:00+00:00, run_after=2025-01-05 00:00:00+00:00
+[2025-01-04T09:35:34.266+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/insert_data.py took 0.774 seconds

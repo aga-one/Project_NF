@@ -64,17 +64,36 @@ CREATE TABLE dm.dm_account_balance_f (
 
 
 
-CREATE OR REPLACE PROCEDURE dm.dm_fill_account_balance_f(i_OnDate date)
+CREATE OR REPLACE
+PROCEDURE dm.dm_fill_account_balance_f(i_OnDate date)
  AS $$
-INSERT INTO dm.dm_account_balance_f(on_date, account_rk, balance_out) --, balance_out_rub
-SELECT i_OnDate AS on_date, mad.account_rk
-,CASE mad.char_type WHEN 'А' THEN COALESCE(b.balance_out,0) + COALESCE(t.debet_amount ,0) - COALESCE(t.credit_amount ,0)
-WHEN 'П' THEN COALESCE(b.balance_out,0) - COALESCE(t.debet_amount ,0) + COALESCE(t.credit_amount ,0)
-END AS balance_out
-FROM ds.md_account_d mad 
-LEFT JOIN dm.dm_account_balance_f b ON mad.account_rk = b.account_rk AND b.on_date = (i_OnDate - INTERVAL '1 day')::date
-LEFT JOIN dm.dm_account_turnover_f t ON mad.account_rk = t.account_rk AND t.on_date = i_OnDate;
-$$  LANGUAGE SQL;
+INSERT
+    INTO
+    dm.dm_account_balance_f(on_date
+    , account_rk
+    , balance_out
+    , balance_out_rub)
+SELECT
+    i_OnDate AS on_date
+    , mad.account_rk
+    , CASE
+        mad.char_type WHEN 'А' THEN COALESCE(b.balance_out, 0) + COALESCE(t.debet_amount, 0) - COALESCE(t.credit_amount, 0)
+        WHEN 'П' THEN COALESCE(b.balance_out, 0) - COALESCE(t.debet_amount, 0) + COALESCE(t.credit_amount, 0)
+    END AS balance_out
+    , CASE
+        mad.char_type WHEN 'А' THEN COALESCE(b.balance_out_rub, 0) + COALESCE(t.debet_amount_rub, 0) - COALESCE(t.credit_amount_rub, 0)
+        WHEN 'П' THEN COALESCE(b.balance_out_rub, 0) - COALESCE(t.debet_amount_rub, 0) + COALESCE(t.credit_amount_rub, 0)
+    END AS balance_out_rub
+FROM
+    ds.md_account_d mad
+LEFT JOIN dm.dm_account_balance_f b ON
+    mad.account_rk = b.account_rk
+    AND b.on_date = (i_OnDate - INTERVAL '1 day')::date
+LEFT JOIN dm.dm_account_turnover_f t ON
+    mad.account_rk = t.account_rk
+    AND t.on_date = i_OnDate;
+
+$$ LANGUAGE SQL;
 
 
 DO $$
@@ -101,6 +120,7 @@ CALL dm.dm_fill_account_balance_f('2018-01-03'::date);
 
 SELECT * FROM ds.ft_balance_f;
 
+------------------------------------------------------------------------------
 CREATE OR REPLACE PROCEDURE dm.dm_fill_data_marts_f(run_id bpchar(64))
 LANGUAGE plpgsql AS
 $$
