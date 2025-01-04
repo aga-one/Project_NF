@@ -1,4 +1,6 @@
-CREATE SCHEMA ds AUTHORIZATION postgres;
+CREATE SCHEMA stage AUTHORIZATION airflow;
+
+CREATE SCHEMA ds AUTHORIZATION airflow;
 
 DROP TABLE IF EXISTS ds.ft_balance_f;
 
@@ -92,3 +94,15 @@ CREATE TABLE ds.md_ledger_account_s (
 CREATE ROLE logs LOGIN PASSWORD '';
 
 CREATE SCHEMA logs AUTHORIZATION logs;
+
+INSERT INTO logs.log_details ("time", run_id, job) VALUES (CURRENT_TIMESTAMP, 'manual__2024-12-31T16:03:23.641038+00:00','Our current job');
+
+DROP TABLE logs.log_details;
+
+CREATE TABLE logs.log_details (
+    "time" timestamptz NULL,
+    run_id bpchar(64) NULL,
+    job text NULL
+);
+
+SELECT "time", run_id, job FROM logs.log_details;

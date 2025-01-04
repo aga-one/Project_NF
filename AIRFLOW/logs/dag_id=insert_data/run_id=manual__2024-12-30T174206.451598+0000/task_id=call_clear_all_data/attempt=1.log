@@ -1,0 +1,37 @@
+[2024-12-30T17:42:10.275+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: insert_data.call_clear_all_data manual__2024-12-30T17:42:06.451598+00:00 [queued]>
+[2024-12-30T17:42:10.289+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: insert_data.call_clear_all_data manual__2024-12-30T17:42:06.451598+00:00 [queued]>
+[2024-12-30T17:42:10.291+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2024-12-30T17:42:10.337+0000] {taskinstance.py:2191} INFO - Executing <Task(SQLExecuteQueryOperator): call_clear_all_data> on 2024-12-30 17:42:06.451598+00:00
+[2024-12-30T17:42:10.352+0000] {standard_task_runner.py:60} INFO - Started process 304 to run task
+[2024-12-30T17:42:10.360+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'insert_data', 'call_clear_all_data', 'manual__2024-12-30T17:42:06.451598+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/insert_data.py', '--cfg-path', '/tmp/tmp804ng9df']
+[2024-12-30T17:42:10.368+0000] {standard_task_runner.py:88} INFO - Job 7: Subtask call_clear_all_data
+[2024-12-30T17:42:10.498+0000] {task_command.py:423} INFO - Running <TaskInstance: insert_data.call_clear_all_data manual__2024-12-30T17:42:06.451598+00:00 [running]> on host 403e7aadd7ee
+[2024-12-30T17:42:10.626+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='agushchin' AIRFLOW_CTX_DAG_ID='insert_data' AIRFLOW_CTX_TASK_ID='call_clear_all_data' AIRFLOW_CTX_EXECUTION_DATE='2024-12-30T17:42:06.451598+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-30T17:42:06.451598+00:00'
+[2024-12-30T17:42:10.630+0000] {sql.py:276} INFO - Executing: CALL dm.clear_all_data()
+[2024-12-30T17:42:10.649+0000] {base.py:83} INFO - Using connection ID 'postgres-db' for task execution.
+[2024-12-30T17:42:10.664+0000] {base.py:83} INFO - Using connection ID 'postgres-db' for task execution.
+[2024-12-30T17:42:10.666+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/operators/sql.py", line 282, in execute
+    output = hook.run(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 391, in run
+    with closing(self.get_conn()) as conn:
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/postgres/hooks/postgres.py", line 158, in get_conn
+    self.conn = psycopg2.connect(**conn_args)
+  File "/home/airflow/.local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5433 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5433 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+[2024-12-30T17:42:10.679+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=insert_data, task_id=call_clear_all_data, execution_date=20241230T174206, start_date=20241230T174210, end_date=20241230T174210
+[2024-12-30T17:42:10.699+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 7 for task call_clear_all_data (connection to server at "localhost" (::1), port 5433 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5433 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+; 304)
+[2024-12-30T17:42:10.742+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-12-30T17:42:10.770+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

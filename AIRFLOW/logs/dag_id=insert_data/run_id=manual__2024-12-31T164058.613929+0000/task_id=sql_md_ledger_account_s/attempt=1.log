@@ -1,0 +1,85 @@
+[2024-12-31T16:41:00.683+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: insert_data.sql_md_ledger_account_s manual__2024-12-31T16:40:58.613929+00:00 [queued]>
+[2024-12-31T16:41:00.697+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: insert_data.sql_md_ledger_account_s manual__2024-12-31T16:40:58.613929+00:00 [queued]>
+[2024-12-31T16:41:00.698+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2024-12-31T16:41:31.484+0000] {taskinstance.py:2191} INFO - Executing <Task(SQLExecuteQueryOperator): sql_md_ledger_account_s> on 2024-12-31 16:40:58.613929+00:00
+[2024-12-31T16:41:31.504+0000] {standard_task_runner.py:60} INFO - Started process 988 to run task
+[2024-12-31T16:41:31.643+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'insert_data', 'sql_md_ledger_account_s', 'manual__2024-12-31T16:40:58.613929+00:00', '--job-id', '151', '--raw', '--subdir', 'DAGS_FOLDER/insert_data.py', '--cfg-path', '/tmp/tmpft7imkb9']
+[2024-12-31T16:41:31.649+0000] {standard_task_runner.py:88} INFO - Job 151: Subtask sql_md_ledger_account_s
+[2024-12-31T16:41:31.754+0000] {task_command.py:423} INFO - Running <TaskInstance: insert_data.sql_md_ledger_account_s manual__2024-12-31T16:40:58.613929+00:00 [running]> on host 403e7aadd7ee
+[2024-12-31T16:41:31.910+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='agushchin' AIRFLOW_CTX_DAG_ID='insert_data' AIRFLOW_CTX_TASK_ID='sql_md_ledger_account_s' AIRFLOW_CTX_EXECUTION_DATE='2024-12-31T16:40:58.613929+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-31T16:40:58.613929+00:00'
+[2024-12-31T16:41:31.912+0000] {sql.py:276} INFO - Executing: INSERT
+    INTO
+    ds.md_ledger_account_s
+    (chapter
+    , chapter_name
+    , section_number
+    , section_name
+    , subsection_name
+    , ledger1_account
+    , ledger1_account_name
+    , ledger_account
+    , ledger_account_name
+    , characteristic
+    , start_date 
+    , end_date)
+SELECT DISTINCT
+    mla."CHAPTER"
+    , mla."CHAPTER_NAME"
+    , mla."SECTION_NUMBER"
+    , mla."SECTION_NAME"
+    , mla."SUBSECTION_NAME"
+    , mla."LEDGER1_ACCOUNT"
+    , mla."LEDGER1_ACCOUNT_NAME"
+    , mla."LEDGER_ACCOUNT"
+    , mla."LEDGER_ACCOUNT_NAME"
+    , mla."CHARACTERISTIC"
+    , to_date(mla."START_DATE", 'YYYY-mm-dd')
+    , to_date(mla."END_DATE", 'YYYY-mm-dd')
+FROM
+    stage.md_ledger_account_s mla
+    LEFT JOIN ds.md_ledger_account_s md ON md.ledger_account = mla."LEDGER_ACCOUNT" 
+    AND md.start_date = to_date(mla."START_DATE", 'YYYY-mm-dd')
+    WHERE md.ledger_account IS NULL;
+
+-- TABLE ds.md_ledger_account_s;
+[2024-12-31T16:41:31.929+0000] {base.py:83} INFO - Using connection ID 'postgres-db' for task execution.
+[2024-12-31T16:41:31.946+0000] {base.py:83} INFO - Using connection ID 'postgres-db' for task execution.
+[2024-12-31T16:41:31.963+0000] {sql.py:450} INFO - Running statement: INSERT
+    INTO
+    ds.md_ledger_account_s
+    (chapter
+    , chapter_name
+    , section_number
+    , section_name
+    , subsection_name
+    , ledger1_account
+    , ledger1_account_name
+    , ledger_account
+    , ledger_account_name
+    , characteristic
+    , start_date 
+    , end_date)
+SELECT DISTINCT
+    mla."CHAPTER"
+    , mla."CHAPTER_NAME"
+    , mla."SECTION_NUMBER"
+    , mla."SECTION_NAME"
+    , mla."SUBSECTION_NAME"
+    , mla."LEDGER1_ACCOUNT"
+    , mla."LEDGER1_ACCOUNT_NAME"
+    , mla."LEDGER_ACCOUNT"
+    , mla."LEDGER_ACCOUNT_NAME"
+    , mla."CHARACTERISTIC"
+    , to_date(mla."START_DATE", 'YYYY-mm-dd')
+    , to_date(mla."END_DATE", 'YYYY-mm-dd')
+FROM
+    stage.md_ledger_account_s mla
+    LEFT JOIN ds.md_ledger_account_s md ON md.ledger_account = mla."LEDGER_ACCOUNT" 
+    AND md.start_date = to_date(mla."START_DATE", 'YYYY-mm-dd')
+    WHERE md.ledger_account IS NULL;
+
+-- TABLE ds.md_ledger_account_s;, parameters: None
+[2024-12-31T16:41:31.971+0000] {sql.py:459} INFO - Rows affected: 0
+[2024-12-31T16:41:31.991+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=insert_data, task_id=sql_md_ledger_account_s, execution_date=20241231T164058, start_date=20241231T164100, end_date=20241231T164131
+[2024-12-31T16:41:32.060+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-12-31T16:41:32.123+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
