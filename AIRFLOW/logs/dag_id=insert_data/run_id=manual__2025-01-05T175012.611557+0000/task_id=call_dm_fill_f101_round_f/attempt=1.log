@@ -1,0 +1,34 @@
+[2025-01-05T17:50:45.744+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: insert_data.call_dm_fill_f101_round_f manual__2025-01-05T17:50:12.611557+00:00 [queued]>
+[2025-01-05T17:50:45.761+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: insert_data.call_dm_fill_f101_round_f manual__2025-01-05T17:50:12.611557+00:00 [queued]>
+[2025-01-05T17:50:45.762+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2025-01-05T17:50:45.958+0000] {taskinstance.py:2191} INFO - Executing <Task(SQLExecuteQueryOperator): call_dm_fill_f101_round_f> on 2025-01-05 17:50:12.611557+00:00
+[2025-01-05T17:50:45.968+0000] {standard_task_runner.py:60} INFO - Started process 176 to run task
+[2025-01-05T17:50:45.971+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'insert_data', 'call_dm_fill_f101_round_f', 'manual__2025-01-05T17:50:12.611557+00:00', '--job-id', '379', '--raw', '--subdir', 'DAGS_FOLDER/insert_data.py', '--cfg-path', '/tmp/tmpvxxpquye']
+[2025-01-05T17:50:45.973+0000] {standard_task_runner.py:88} INFO - Job 379: Subtask call_dm_fill_f101_round_f
+[2025-01-05T17:50:46.030+0000] {task_command.py:423} INFO - Running <TaskInstance: insert_data.call_dm_fill_f101_round_f manual__2025-01-05T17:50:12.611557+00:00 [running]> on host 403e7aadd7ee
+[2025-01-05T17:50:46.131+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='agushchin' AIRFLOW_CTX_DAG_ID='insert_data' AIRFLOW_CTX_TASK_ID='call_dm_fill_f101_round_f' AIRFLOW_CTX_EXECUTION_DATE='2025-01-05T17:50:12.611557+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-01-05T17:50:12.611557+00:00'
+[2025-01-05T17:50:46.133+0000] {sql.py:276} INFO - Executing: CALL dm.fill_f101_round_f('2018-02-01'::data, 'manual__2025-01-05T17:50:12.611557+00:00')
+[2025-01-05T17:50:46.143+0000] {base.py:83} INFO - Using connection ID 'postgres-db' for task execution.
+[2025-01-05T17:50:46.153+0000] {base.py:83} INFO - Using connection ID 'postgres-db' for task execution.
+[2025-01-05T17:50:46.164+0000] {sql.py:450} INFO - Running statement: CALL dm.fill_f101_round_f('2018-02-01'::data, 'manual__2025-01-05T17:50:12.611557+00:00'), parameters: None
+[2025-01-05T17:50:46.168+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/operators/sql.py", line 282, in execute
+    output = hook.run(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 398, in run
+    self._run_command(cur, sql_statement, parameters)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 455, in _run_command
+    cur.execute(sql_statement)
+psycopg2.errors.UndefinedObject: type "data" does not exist
+LINE 1: CALL dm.fill_f101_round_f('2018-02-01'::data, 'manual__2025-...
+                                                ^
+
+[2025-01-05T17:50:46.180+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=insert_data, task_id=call_dm_fill_f101_round_f, execution_date=20250105T175012, start_date=20250105T175045, end_date=20250105T175046
+[2025-01-05T17:50:46.196+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 379 for task call_dm_fill_f101_round_f (type "data" does not exist
+LINE 1: CALL dm.fill_f101_round_f('2018-02-01'::data, 'manual__2025-...
+                                                ^
+; 176)
+[2025-01-05T17:50:46.224+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-01-05T17:50:46.253+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

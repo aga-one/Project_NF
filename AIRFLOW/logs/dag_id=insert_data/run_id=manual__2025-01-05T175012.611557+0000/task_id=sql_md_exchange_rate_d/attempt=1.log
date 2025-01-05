@@ -1,0 +1,85 @@
+[2025-01-05T17:50:35.547+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: insert_data.sql_md_exchange_rate_d manual__2025-01-05T17:50:12.611557+00:00 [queued]>
+[2025-01-05T17:50:35.558+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: insert_data.sql_md_exchange_rate_d manual__2025-01-05T17:50:12.611557+00:00 [queued]>
+[2025-01-05T17:50:35.559+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2025-01-05T17:50:35.784+0000] {taskinstance.py:2191} INFO - Executing <Task(SQLExecuteQueryOperator): sql_md_exchange_rate_d> on 2025-01-05 17:50:12.611557+00:00
+[2025-01-05T17:50:35.792+0000] {standard_task_runner.py:60} INFO - Started process 158 to run task
+[2025-01-05T17:50:35.797+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'insert_data', 'sql_md_exchange_rate_d', 'manual__2025-01-05T17:50:12.611557+00:00', '--job-id', '376', '--raw', '--subdir', 'DAGS_FOLDER/insert_data.py', '--cfg-path', '/tmp/tmpl9m5yy2f']
+[2025-01-05T17:50:35.800+0000] {standard_task_runner.py:88} INFO - Job 376: Subtask sql_md_exchange_rate_d
+[2025-01-05T17:50:35.859+0000] {task_command.py:423} INFO - Running <TaskInstance: insert_data.sql_md_exchange_rate_d manual__2025-01-05T17:50:12.611557+00:00 [running]> on host 403e7aadd7ee
+[2025-01-05T17:50:35.972+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='agushchin' AIRFLOW_CTX_DAG_ID='insert_data' AIRFLOW_CTX_TASK_ID='sql_md_exchange_rate_d' AIRFLOW_CTX_EXECUTION_DATE='2025-01-05T17:50:12.611557+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-01-05T17:50:12.611557+00:00'
+[2025-01-05T17:50:35.973+0000] {sql.py:276} INFO - Executing: UPDATE
+    ds.md_exchange_rate_d md
+SET
+    reduced_cource = mer."REDUCED_COURCE"
+    , code_iso_num = mer."CODE_ISO_NUM"
+    , data_actual_end_date = to_date(mer."DATA_ACTUAL_END_DATE", 'YYYY-mm-dd')
+FROM
+    stage.md_exchange_rate_d mer
+WHERE
+    md.currency_rk = mer."CURRENCY_RK"
+    AND md.data_actual_date = to_date(mer."DATA_ACTUAL_DATE", 'YYYY-mm-dd');
+
+
+INSERT
+    INTO
+    ds.md_exchange_rate_d
+    (currency_rk
+    , reduced_cource
+    , code_iso_num
+    , data_actual_date
+    , data_actual_end_date)
+SELECT DISTINCT
+-- В csv оказались задвоенные данные
+    mer."CURRENCY_RK"
+    , mer."REDUCED_COURCE"
+    , mer."CODE_ISO_NUM"
+    , to_date(mer."DATA_ACTUAL_DATE", 'YYYY-mm-dd')
+    , to_date(mer."DATA_ACTUAL_END_DATE", 'YYYY-mm-dd')
+FROM
+    stage.md_exchange_rate_d mer
+    LEFT JOIN ds.md_exchange_rate_d md ON md.currency_rk = mer."CURRENCY_RK" 
+    AND md.data_actual_date = to_date(mer."DATA_ACTUAL_DATE", 'YYYY-mm-dd')
+    WHERE md.currency_rk IS NULL;
+
+-- TABLE ds.md_exchange_rate_d;
+[2025-01-05T17:50:35.984+0000] {base.py:83} INFO - Using connection ID 'postgres-db' for task execution.
+[2025-01-05T17:50:35.992+0000] {base.py:83} INFO - Using connection ID 'postgres-db' for task execution.
+[2025-01-05T17:50:36.003+0000] {sql.py:450} INFO - Running statement: UPDATE
+    ds.md_exchange_rate_d md
+SET
+    reduced_cource = mer."REDUCED_COURCE"
+    , code_iso_num = mer."CODE_ISO_NUM"
+    , data_actual_end_date = to_date(mer."DATA_ACTUAL_END_DATE", 'YYYY-mm-dd')
+FROM
+    stage.md_exchange_rate_d mer
+WHERE
+    md.currency_rk = mer."CURRENCY_RK"
+    AND md.data_actual_date = to_date(mer."DATA_ACTUAL_DATE", 'YYYY-mm-dd');
+
+
+INSERT
+    INTO
+    ds.md_exchange_rate_d
+    (currency_rk
+    , reduced_cource
+    , code_iso_num
+    , data_actual_date
+    , data_actual_end_date)
+SELECT DISTINCT
+-- В csv оказались задвоенные данные
+    mer."CURRENCY_RK"
+    , mer."REDUCED_COURCE"
+    , mer."CODE_ISO_NUM"
+    , to_date(mer."DATA_ACTUAL_DATE", 'YYYY-mm-dd')
+    , to_date(mer."DATA_ACTUAL_END_DATE", 'YYYY-mm-dd')
+FROM
+    stage.md_exchange_rate_d mer
+    LEFT JOIN ds.md_exchange_rate_d md ON md.currency_rk = mer."CURRENCY_RK" 
+    AND md.data_actual_date = to_date(mer."DATA_ACTUAL_DATE", 'YYYY-mm-dd')
+    WHERE md.currency_rk IS NULL;
+
+-- TABLE ds.md_exchange_rate_d;, parameters: None
+[2025-01-05T17:50:36.013+0000] {sql.py:459} INFO - Rows affected: 0
+[2025-01-05T17:50:37.034+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=insert_data, task_id=sql_md_exchange_rate_d, execution_date=20250105T175012, start_date=20250105T175035, end_date=20250105T175037
+[2025-01-05T17:50:39.095+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-01-05T17:50:39.147+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

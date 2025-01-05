@@ -1,0 +1,125 @@
+[2025-01-05T09:53:32.796+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: insert_data.sql_md_ledger_account_s scheduled__2025-01-04T00:00:00+00:00 [queued]>
+[2025-01-05T09:53:32.807+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: insert_data.sql_md_ledger_account_s scheduled__2025-01-04T00:00:00+00:00 [queued]>
+[2025-01-05T09:53:32.808+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2025-01-05T09:53:33.013+0000] {taskinstance.py:2191} INFO - Executing <Task(SQLExecuteQueryOperator): sql_md_ledger_account_s> on 2025-01-04 00:00:00+00:00
+[2025-01-05T09:53:33.020+0000] {standard_task_runner.py:60} INFO - Started process 122 to run task
+[2025-01-05T09:53:33.025+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'insert_data', 'sql_md_ledger_account_s', 'scheduled__2025-01-04T00:00:00+00:00', '--job-id', '353', '--raw', '--subdir', 'DAGS_FOLDER/insert_data.py', '--cfg-path', '/tmp/tmpyeaas56w']
+[2025-01-05T09:53:33.028+0000] {standard_task_runner.py:88} INFO - Job 353: Subtask sql_md_ledger_account_s
+[2025-01-05T09:53:33.083+0000] {task_command.py:423} INFO - Running <TaskInstance: insert_data.sql_md_ledger_account_s scheduled__2025-01-04T00:00:00+00:00 [running]> on host 403e7aadd7ee
+[2025-01-05T09:53:33.161+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='agushchin' AIRFLOW_CTX_DAG_ID='insert_data' AIRFLOW_CTX_TASK_ID='sql_md_ledger_account_s' AIRFLOW_CTX_EXECUTION_DATE='2025-01-04T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-01-04T00:00:00+00:00'
+[2025-01-05T09:53:33.162+0000] {sql.py:276} INFO - Executing: UPDATE
+    ds.md_ledger_account_s md
+SET
+    chapter = mla."CHAPTER"
+    , chapter_name = mla."CHAPTER_NAME"
+    , section_number = mla."SECTION_NUMBER"
+    , section_name = mla."SECTION_NAME"
+    , subsection_name = mla."SUBSECTION_NAME"
+    , ledger1_account = mla."LEDGER1_ACCOUNT"
+    , ledger1_account_name = mla."LEDGER1_ACCOUNT_NAME"
+    , ledger_account_name = mla."LEDGER_ACCOUNT_NAME"
+    , characteristic = mla."CHARACTERISTIC"
+    , end_date = to_date(mla."END_DATE", 'YYYY-mm-dd')
+FROM
+    stage.md_ledger_account_s mla
+WHERE
+    md.ledger_account = mla."LEDGER_ACCOUNT"
+    AND md.start_date = to_date(mla."START_DATE", 'YYYY-mm-dd');
+
+
+INSERT
+    INTO
+    ds.md_ledger_account_s
+    (chapter
+    , chapter_name
+    , section_number
+    , section_name
+    , subsection_name
+    , ledger1_account
+    , ledger1_account_name
+    , ledger_account
+    , ledger_account_name
+    , characteristic
+    , start_date 
+    , end_date)
+SELECT DISTINCT
+    mla."CHAPTER"
+    , mla."CHAPTER_NAME"
+    , mla."SECTION_NUMBER"
+    , mla."SECTION_NAME"
+    , mla."SUBSECTION_NAME"
+    , mla."LEDGER1_ACCOUNT"
+    , mla."LEDGER1_ACCOUNT_NAME"
+    , mla."LEDGER_ACCOUNT"
+    , mla."LEDGER_ACCOUNT_NAME"
+    , mla."CHARACTERISTIC"
+    , to_date(mla."START_DATE", 'YYYY-mm-dd')
+    , to_date(mla."END_DATE", 'YYYY-mm-dd')
+FROM
+    stage.md_ledger_account_s mla
+    LEFT JOIN ds.md_ledger_account_s md ON md.ledger_account = mla."LEDGER_ACCOUNT" 
+    AND md.start_date = to_date(mla."START_DATE", 'YYYY-mm-dd')
+    WHERE md.ledger_account IS NULL;
+
+-- TABLE ds.md_ledger_account_s;
+[2025-01-05T09:53:33.170+0000] {base.py:83} INFO - Using connection ID 'postgres-db' for task execution.
+[2025-01-05T09:53:33.178+0000] {base.py:83} INFO - Using connection ID 'postgres-db' for task execution.
+[2025-01-05T09:53:33.187+0000] {sql.py:450} INFO - Running statement: UPDATE
+    ds.md_ledger_account_s md
+SET
+    chapter = mla."CHAPTER"
+    , chapter_name = mla."CHAPTER_NAME"
+    , section_number = mla."SECTION_NUMBER"
+    , section_name = mla."SECTION_NAME"
+    , subsection_name = mla."SUBSECTION_NAME"
+    , ledger1_account = mla."LEDGER1_ACCOUNT"
+    , ledger1_account_name = mla."LEDGER1_ACCOUNT_NAME"
+    , ledger_account_name = mla."LEDGER_ACCOUNT_NAME"
+    , characteristic = mla."CHARACTERISTIC"
+    , end_date = to_date(mla."END_DATE", 'YYYY-mm-dd')
+FROM
+    stage.md_ledger_account_s mla
+WHERE
+    md.ledger_account = mla."LEDGER_ACCOUNT"
+    AND md.start_date = to_date(mla."START_DATE", 'YYYY-mm-dd');
+
+
+INSERT
+    INTO
+    ds.md_ledger_account_s
+    (chapter
+    , chapter_name
+    , section_number
+    , section_name
+    , subsection_name
+    , ledger1_account
+    , ledger1_account_name
+    , ledger_account
+    , ledger_account_name
+    , characteristic
+    , start_date 
+    , end_date)
+SELECT DISTINCT
+    mla."CHAPTER"
+    , mla."CHAPTER_NAME"
+    , mla."SECTION_NUMBER"
+    , mla."SECTION_NAME"
+    , mla."SUBSECTION_NAME"
+    , mla."LEDGER1_ACCOUNT"
+    , mla."LEDGER1_ACCOUNT_NAME"
+    , mla."LEDGER_ACCOUNT"
+    , mla."LEDGER_ACCOUNT_NAME"
+    , mla."CHARACTERISTIC"
+    , to_date(mla."START_DATE", 'YYYY-mm-dd')
+    , to_date(mla."END_DATE", 'YYYY-mm-dd')
+FROM
+    stage.md_ledger_account_s mla
+    LEFT JOIN ds.md_ledger_account_s md ON md.ledger_account = mla."LEDGER_ACCOUNT" 
+    AND md.start_date = to_date(mla."START_DATE", 'YYYY-mm-dd')
+    WHERE md.ledger_account IS NULL;
+
+-- TABLE ds.md_ledger_account_s;, parameters: None
+[2025-01-05T09:53:33.192+0000] {sql.py:459} INFO - Rows affected: 0
+[2025-01-05T09:53:33.204+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=insert_data, task_id=sql_md_ledger_account_s, execution_date=20250104T000000, start_date=20250105T095332, end_date=20250105T095333
+[2025-01-05T09:53:33.237+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-01-05T09:53:33.279+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
