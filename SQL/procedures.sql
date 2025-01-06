@@ -32,3 +32,4 @@ TABLE ds.md_ledger_account_s;
 
 TABLE logs.log_details;
 TRUNCATE logs.log_details; 
+

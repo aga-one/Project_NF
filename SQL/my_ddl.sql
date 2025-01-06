@@ -100,9 +100,10 @@ INSERT INTO logs.log_details ("time", run_id, job) VALUES (CURRENT_TIMESTAMP, 'm
 DROP TABLE logs.log_details;
 
 CREATE TABLE logs.log_details (
-    "time" timestamptz NULL,
+    "time" timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP,
     run_id bpchar(64) NULL,
     job text NULL
 );
 
+ALTER TABLE logs.log_details ALTER COLUMN "time" SET DEFAULT CURRENT_TIMESTAMP;
 SELECT "time", run_id, job FROM logs.log_details;
