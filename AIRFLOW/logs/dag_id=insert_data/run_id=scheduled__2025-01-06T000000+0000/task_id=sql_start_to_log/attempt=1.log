@@ -1,0 +1,19 @@
+[2025-01-11T08:39:18.191+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: insert_data.sql_start_to_log scheduled__2025-01-06T00:00:00+00:00 [queued]>
+[2025-01-11T08:39:18.200+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: insert_data.sql_start_to_log scheduled__2025-01-06T00:00:00+00:00 [queued]>
+[2025-01-11T08:39:18.201+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2025-01-11T08:39:20.464+0000] {taskinstance.py:2191} INFO - Executing <Task(SQLExecuteQueryOperator): sql_start_to_log> on 2025-01-06 00:00:00+00:00
+[2025-01-11T08:39:21.357+0000] {standard_task_runner.py:60} INFO - Started process 82 to run task
+[2025-01-11T08:39:22.367+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'insert_data', 'sql_start_to_log', 'scheduled__2025-01-06T00:00:00+00:00', '--job-id', '552', '--raw', '--subdir', 'DAGS_FOLDER/insert_data.py', '--cfg-path', '/tmp/tmpa0tru5h1']
+[2025-01-11T08:39:22.373+0000] {standard_task_runner.py:88} INFO - Job 552: Subtask sql_start_to_log
+[2025-01-11T08:39:24.457+0000] {task_command.py:423} INFO - Running <TaskInstance: insert_data.sql_start_to_log scheduled__2025-01-06T00:00:00+00:00 [running]> on host 403e7aadd7ee
+[2025-01-11T08:39:25.602+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='agushchin' AIRFLOW_CTX_DAG_ID='insert_data' AIRFLOW_CTX_TASK_ID='sql_start_to_log' AIRFLOW_CTX_EXECUTION_DATE='2025-01-06T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-01-06T00:00:00+00:00'
+[2025-01-11T08:39:25.604+0000] {sql.py:276} INFO - Executing: INSERT INTO logs.log_details ("time", run_id, job) 
+		VALUES (CURRENT_TIMESTAMP, 'scheduled__2025-01-06T00:00:00+00:00','Starting job');
+[2025-01-11T08:39:25.615+0000] {base.py:83} INFO - Using connection ID 'postgres-db' for task execution.
+[2025-01-11T08:39:25.625+0000] {base.py:83} INFO - Using connection ID 'postgres-db' for task execution.
+[2025-01-11T08:39:25.640+0000] {sql.py:450} INFO - Running statement: INSERT INTO logs.log_details ("time", run_id, job) 
+		VALUES (CURRENT_TIMESTAMP, 'scheduled__2025-01-06T00:00:00+00:00','Starting job');, parameters: None
+[2025-01-11T08:39:25.646+0000] {sql.py:459} INFO - Rows affected: 1
+[2025-01-11T08:39:25.665+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=insert_data, task_id=sql_start_to_log, execution_date=20250106T000000, start_date=20250111T083918, end_date=20250111T083925
+[2025-01-11T08:39:25.697+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-01-11T08:39:25.736+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

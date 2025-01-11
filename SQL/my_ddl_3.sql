@@ -42,12 +42,12 @@ DECLARE
 BEGIN
 -- Удаляем существующие данные за дату расчета
 INSERT INTO logs.log_details ("time", run_id, job) 
-            VALUES (CURRENT_TIMESTAMP, run_id,'Deleting data from dm.dm_f101_round_f.');
+            VALUES (CURRENT_TIMESTAMP, run_id, 'Deleting data from dm.dm_f101_round_f.');
     DELETE FROM dm.dm_f101_round_f
       WHERE from_date = i_FromDate;
 -- Наполняем витрину данными
 INSERT INTO logs.log_details ("time", run_id, job) 
-            VALUES (CURRENT_TIMESTAMP, run_id,'Begin filling data to dm.dm_f101_round_f.');
+            VALUES (CURRENT_TIMESTAMP, run_id, 'Begin filling data to dm.dm_f101_round_f.');
     INSERT
     INTO
     dm.dm_f101_round_f (from_date
@@ -156,4 +156,8 @@ $$ LANGUAGE plpgsql;
 
 CALL dm.fill_f101_round_f('2018-02-01'::date);
 
-TABLE dm.dm_f101_round_f;
+TRUNCATE dm.dm_f101_round_f;
+
+TABLE dm.dm_f101_round_f; 
+
+TABLE logs.log_details;

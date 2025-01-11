@@ -39,7 +39,8 @@ INSERT INTO dm.dm_account_turnover_f (on_date, account_rk, credit_amount, credit
     GROUP BY p.account_rk;
 $$  LANGUAGE SQL;
 
-CALL dm.dm_fill_account_turnover_f('2018-01-15'::date);
+-- CALL dm.dm_fill_account_turnover_f('2018-01-15'::date);
+TRUNCATE dm.dm_account_turnover_f;
 TABLE dm.dm_account_turnover_f;
 
 DO $$
@@ -116,8 +117,9 @@ FOR dt IN SELECT generate_series('2018-01-01'::date, '2018-01-31'::date, '1 day'
 END LOOP;
 END; $$
 
-CALL dm.dm_fill_account_balance_f('2018-01-03'::date);
+--CALL dm.dm_fill_account_balance_f('2018-01-03'::date);
 
+TRUNCATE dm.dm_account_turnover_f;
 SELECT * FROM ds.ft_balance_f;
 
 ------------------------------------------------------------------------------
@@ -152,6 +154,8 @@ $$;
 
 CALL dm.dm_fill_data_marts_f('manual__2024-12-31T17:10:26.179982+00:00');
 
+TRUNCATE dm.dm_account_turnover_f;
+TRUNCATE dm.dm_account_balance_f;
 
 TABLE dm.dm_account_turnover_f;
 TABLE dm.dm_account_balance_f;

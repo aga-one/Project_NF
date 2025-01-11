@@ -95,9 +95,9 @@ CREATE ROLE logs LOGIN PASSWORD '';
 
 CREATE SCHEMA logs AUTHORIZATION logs;
 
-INSERT INTO logs.log_details ("time", run_id, job) VALUES (CURRENT_TIMESTAMP, 'manual__2024-12-31T16:03:23.641038+00:00','Our current job');
+--INSERT INTO logs.log_details ("time", run_id, job) VALUES (CURRENT_TIMESTAMP, 'manual__2024-12-31T16:03:23.641038+00:00','Our current job');
 
-DROP TABLE logs.log_details;
+--DROP TABLE logs.log_details;
 
 CREATE TABLE logs.log_details (
     "time" timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -105,5 +105,5 @@ CREATE TABLE logs.log_details (
     job text NULL
 );
 
-ALTER TABLE logs.log_details ALTER COLUMN "time" SET DEFAULT CURRENT_TIMESTAMP;
+--ALTER TABLE logs.log_details ALTER COLUMN "time" SET DEFAULT CURRENT_TIMESTAMP;
 SELECT "time", run_id, job FROM logs.log_details;
