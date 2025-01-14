@@ -25,3 +25,11 @@
 Реализовано скриптом на python. Работа c SQL модулем sqlalchemy, csv - pandas.
 
 [Видео 1.4](https://disk.yandex.ru/i/MLVZRxcIlcSMRg)
+
+
+
+## Задача 2.1
+Реализовано двумя вариантами sql запроса для posgres и mssql
+
+[Видео 2.1](https://disk.yandex.ru/i/CRJ7LLCl2Hi1ew)
+
