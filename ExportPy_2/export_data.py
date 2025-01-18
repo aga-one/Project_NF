@@ -22,8 +22,8 @@ datadirectory = path.join(path.dirname(path.realpath(__file__)),"data")
 
 def Load_Data(file_name):
     # data = genfromtxt(file_name, delimiter=',', skip_header=1, dtype='str', encoding='windows-1251')
-    data = pd.read_csv(file_name, delimiter=',', encoding='windows-1251')
     # return data.tolist()
+    data = pd.read_csv(file_name, delimiter=',', encoding='windows-1251')    
     return data.values.tolist()
 
 if __name__ == "__main__":
