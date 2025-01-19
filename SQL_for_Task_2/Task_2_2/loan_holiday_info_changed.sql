@@ -73,7 +73,7 @@ select   d.deal_rk
         ,d.agreement_rk --Ссылка на договор
         ,d.deal_start_date --Дата начала действия сделки
         ,d.department_rk --Ссылка на ГО/филиал
-        ,CAST(d.product_rk AS BIGINT) AS product_rk -- Ссылка на продукт
+        ,d.product_rk AS product_rk -- Ссылка на продукт
         ,p.product_name -- Наименование продукта
         ,d.deal_type_cd -- Наименование типа сделки
 from deal d
